@@ -13,7 +13,7 @@ const val COVID_CASES_URL = "https://www.ecdc.europa.eu/en/geographical-distribu
 const val POPULATION_DATA_CSV_FILE_PATH = "src/main/resources/population_by_country_2020.csv"
 const val COVID_CASES_CSV_FILE_PATH = "src/main/resources/covidData.csv"
 
-fun loadCountries(online: Boolean = false) = if (online) {
+fun loadCountries(fetch: Boolean = false) = if (fetch) {
     fetchCovidCases()
 } else {
     Table.read().csv(COVID_CASES_CSV_FILE_PATH)
